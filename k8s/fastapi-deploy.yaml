@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-agent
+  labels:
+    app: fastapi-agent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-agent
+  template:
+    metadata:
+      labels:
+        app: fastapi-agent
+    spec:
+      containers:
+      - name: fastapi
+        image: asia-south1-docker.pkg.dev/gke-arena/preveen-repo/fastapi-agent:v2
+        ports:
+        - containerPort: 8000
+        env:
+        - name: OLLAMA_URL
+          value: "http://ollama-service:11434/api/generate"
+        resources:
+          requests:
+            cpu: "200m"
+            memory: "256Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
