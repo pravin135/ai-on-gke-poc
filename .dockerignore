@@ -1,0 +1,26 @@
+# Python virtual environment
+venv/
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Kubernetes manifests
+*.yaml
+*.yml
+k8s/
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store

@@ -1,0 +1,15 @@
+CrashLoopBackOff:
+This happens when container repeatedly crashes.
+
+Possible causes:
+- Application error
+- Wrong command
+- Port conflict
+- Missing environment variable
+
+ImagePullBackOff:
+This occurs when Kubernetes cannot pull container image.
+
+Possible causes:
+- Wrong image name
+- Private registry authentication issue
